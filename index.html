@@ -1,0 +1,61 @@
+
+<!doctype html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Trendyol Kâr Hesaplayıcı</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="card">
+		<h1>Trendyol Kâr Hesaplayıcı</h1>
+
+		<form id="calcForm">
+			<label>Alış Fiyatı (TL) — KDV hariç olarak giriniz
+				<input type="number" step="0.01" id="purchasePrice" value="0" required>
+			</label>
+
+			<label>Satış Fiyatı (TL) — KDV dahil olarak giriniz
+				<input type="number" step="0.01" id="salePrice" value="0" required>
+			</label>
+
+			<label>Kargo Bedeli (TL) — Bu tutar karlılıktan düşülür
+				<input type="number" step="0.01" id="shippingFee" value="0">
+			</label>
+
+			<label>Trendyol Komisyon (%) (elle giriniz)
+				<input type="number" step="0.01" id="commissionPercent" value="21.5">
+			</label>
+
+			<label>Komisyonun KDV oranı (%)
+				<input type="number" step="0.01" id="commissionVatPercent" value="20">
+			</label>
+
+			<label>Ürün KDV oranı (%) — örn: çocuk bebek giyim için %10
+				<input type="number" step="0.01" id="productVatPercent" value="10">
+			</label>
+
+			<div class="actions">
+				<button type="button" id="calcBtn">Hesapla</button>
+				<button type="reset">Temizle</button>
+			</div>
+		</form>
+
+		<section id="result" class="result">
+			<h2>Sonuç</h2>
+			<div id="breakdown"></div>
+		</section>
+
+		<div id="resultModal" class="modal hidden" aria-hidden="true">
+			<div class="modal-card">
+				<button class="modal-close" id="modalClose">×</button>
+				<h3>Detaylı Sonuç</h3>
+				<div id="modalContent"></div>
+			</div>
+		</div>
+	</main>
+
+	<script src="script.js"></script>
+</body>
+</html>
